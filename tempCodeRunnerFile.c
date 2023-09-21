@@ -1,11 +1,47 @@
-    printf( " \n %d " , a1.megh );
-    printf( " \n %d " , a2.megh );
-    printf( " \n %d " , a3.megh );
+#include <stdio.h>
+void func1(int *arr, int k);
 
-    printf( " \n %f " , a1.meg );
-    printf( " \n %f " , a2.meg );
-    printf( " \n %f " , a3.meg );
+int main()
+{
 
-    printf( " \n %c " , a1.me );
-    printf( " \n %c " , a2.me );
-    
+    int n;
+
+    printf(" \n how many numbers you want to enter ");
+    scanf(" %d ", &n);
+
+    int array[n];
+    for (int i = 0; i < n; i++)
+    {
+        printf(" \n enter array [%d] ", i);
+        scanf("%d", &array[i]);
+    }
+    // reverse array
+
+    func1(array, n);
+
+    for (int i = 0; i < n; i++)
+    {
+        // printf(" \n array [%d] = %d ", i, arr[i]);
+        printf(" \n array [%d] = %d ", i, *(array + i));
+    }
+
+    return 0;
+}
+
+void func1(int *arr, int k)
+{
+    int temp1, i;
+    for (i = k; i > ((k - 1) / 2); i--)
+    {
+        temp1 = *(arr + i);
+        *(arr + i) = *(arr + (k - i));
+        *(arr + (k - i)) = temp1;
+    }
+
+    // for (i = 0; i < k; i++)
+    // {
+    //     // printf(" \n array [%d] = %d ", i, arr[i]);
+    //     printf(" \n array [%d] = %d ", i, *(arr + i));
+    // }
+}
+//code showa garbage value at arr0

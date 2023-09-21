@@ -1,24 +1,39 @@
 #include <stdio.h>
-float main()
-{
-    int i,j;
-    float g,l,k,s[50];
 
-    for (i=1;i<=10;i++)
+void func1(int *arr, int k);
+
+int main()
+{
+    int n;
+
+    printf("\nHow many numbers you want to enter: ");
+    scanf("%d", &n);
+
+    int array[n];
+    for (int i = 0; i < n; i++)
     {
-        k=1.0;
-        for(j=1;j<=i;j++)
-        {
-            k=j*k;
-            if(j<i)
-            {
-                continue;
-            }
-            s[i]=1/k;
-            //printf(" \n %.9f",s[i]);
-        }
-        l=l+s[i];
+        printf("\nEnter array [%d]: ", i);
+        scanf("%d", &array[i]);
     }
-     printf(" \n %.9f",l);
-     return 0;
+
+    // Reverse the array
+    func1(array, n);
+
+    return 0;
+}
+
+void func1(int *arr, int k)
+{
+    int temp1, i;
+    for (i = 0; i < k / 2; i++)
+    {
+        temp1 = *(arr + i);
+        *(arr + i) = *(arr + k - i - 1);
+        *(arr + k - i - 1) = temp1;
+    }
+
+    for (i = 0; i < k; i++)
+    {
+        printf("\narray [%d] = %d", i, *(arr + i));
+    }
 }
