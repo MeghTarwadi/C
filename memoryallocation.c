@@ -52,10 +52,9 @@ int main()
     print(ptr, n);
     scan(ptr, n);
     print(ptr, n);
-
+    printf( "\nAfter free" );
     free(ptr);
     print(ptr, n);
-    // check
     printf("\nEnter the size that you want to have");
     scanf("%d", &a);
 
@@ -71,8 +70,8 @@ int main()
     print(ptr, a);
     scan(ptr, a);
     print(ptr, a);
+    printf( "\nAfter free" );
     free(ptr);
-    // check
     print(ptr, a);
 
     return 0;
