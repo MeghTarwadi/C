@@ -17,6 +17,8 @@ void func1(int *arr)
     }
     else
     {
+        *(arr + k)=NULL;
+        printf( " \n the address of null is %d ",(arr + k) );
     }
     k++;
     }
@@ -43,5 +45,6 @@ void main()
     for (int i = 0; i < 50; i++)
     {
         printf(" \n array %d =%d ", i, *(a + i));
+        //printf( " \n the address of null is %d ",(a + i) );
     }
 }
