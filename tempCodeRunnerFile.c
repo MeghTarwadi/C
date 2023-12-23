@@ -1,4 +1,1 @@
-int main()
-// {
-//     func2();
-// }
+;temp1=temp

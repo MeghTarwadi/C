@@ -1,6 +1,7 @@
 #include <stdio.h>
 extern int ext;
-extern int func2();
+extern int 
+func2();
 //try to use int ext; eithout extern keyword it will throw error though i implemened 
 //file extern is due to i included it at lsast hance it says that you didnt defined 
 //antthing here and throws error there are teo options for it 1. define at the start
