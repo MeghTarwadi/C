@@ -1,22 +1,38 @@
 #include <stdio.h>
-int main()
-	{
-	printf("\n ==========================================");
-	printf("\n             Factorial");
-	printf("\n ==========================================");
+#include <time.h>
 
-	int n,fact=1;
- 	printf("\n Enter No to find its Factorial : ");
-	scanf("%d",&n);
-	
- 	while(n>1)
- 		{
-  			fact=fact*n;
-  			n=n-1;
- 		}
-		
- 	printf("\n Factorial of entered no is : %d",fact);
- 	
- 	printf("\n ==========================================");
-	return 0;
+double factorial(double num) {
+    if(num>1){
+        return num*factorial(--num);
+    }
+    else{
+        return 1;
+    }
+}
+
+int main() {
+    double a;
+    double time;
+    clock_t start, end;
+
+
+    printf("\n\n=======================================================\n");
+    printf("Enter number to get factorial: ");
+    scanf("%lf", &a);
+
+    start = clock();
+    // double ans = factorial(a);
+    double ans=1;
+    for(double i=1;i<=a;i++){
+        ans=ans*i;
+    }
+    end = clock();
+
+    time = (double)(end - start) / CLOCKS_PER_SEC;
+
+    printf("\nFactorial of %lf is: %lf", a, ans);
+    printf("\nTime is %lf seconds", time);
+    printf("\n=======================================================\n\n\n");
+
+    return 0;
 }
